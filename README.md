@@ -44,8 +44,8 @@
 1. リポジトリをクローン
 
    ```bash
-   git clone https://github.com/yourname/invest-simulator.git
-   cd invest-simulator
+   git clone https://github.com/KotaroTanabe/vibe-invest-sim.git
+   cd vibe-invest-sim
    ```
 2. 依存ライブラリのインストール（ローカル開発用）
 
