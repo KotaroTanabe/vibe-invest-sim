@@ -1,0 +1,14 @@
+{
+  "name": "vibe-invest-sim",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "http-server -p 3000 -c-1 .",
+    "lint": "echo \"No lint configured\"",
+    "build": "echo \"No build step\"",
+    "test": "node test/test.js"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
