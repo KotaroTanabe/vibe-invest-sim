@@ -2,6 +2,8 @@
 
 ![CI](https://github.com/KotaroTanabe/vibe-invest-sim/actions/workflows/ci.yml/badge.svg)
 
+[デモページはこちら](https://kotarotanabe.github.io/vibe-invest-sim/)
+
 ## 概要
 本ツールは、任意の投資アルゴリズムを過去の一定期間に対して適用し、その結果をWebブラウザ上でインタラクティブに可視化するためのメディアなし（静止画像ではなくライブラリによるチャート）ツールです。フロントエンドはシンプルなHTML/CSS/JavaScript構成で、チャート描画にはChart.jsなどの軽量ライブラリを用います。
 
