@@ -1,6 +1,6 @@
 {
   "name": "vibe-invest-sim",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "start": "http-server -p 3000 -c-1 .",
