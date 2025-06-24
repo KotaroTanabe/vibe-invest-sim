@@ -1,4 +1,4 @@
-export function generateMockData(start = '2024-01', end = '2024-12') {
+export function generateMockData(start = '2024-01', end = '2024-12', monthly = 100000) {
   const startDate = new Date(`${start}-01`);
   const endDate = new Date(`${end}-01`);
   const labels = [];
@@ -9,7 +9,7 @@ export function generateMockData(start = '2024-01', end = '2024-12') {
   for (let d = new Date(startDate); d <= endDate; d.setMonth(d.getMonth() + 1)) {
     const label = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
     labels.push(label);
-    cumulative += 100000;
+    cumulative += monthly;
     investmentData.push(cumulative);
     valuationData.push(Math.round(cumulative * (1 + 0.05 * Math.sin(i))));
     i += 1;
@@ -48,8 +48,8 @@ export function generateCSV(data) {
   return csv;
 }
 
-export function downloadCSV(start, end) {
-  const data = generateMockData(start, end);
+export function downloadCSV(start, end, monthly) {
+  const data = generateMockData(start, end, monthly);
   const csv = generateCSV(data);
   const blob = new Blob([csv], { type: 'text/csv' });
   const url = URL.createObjectURL(blob);
@@ -65,8 +65,9 @@ let chartInstance;
 export function updateChart() {
   const start = document.getElementById('start-date').value;
   const end = document.getElementById('end-date').value;
+  const monthly = parseInt(document.getElementById('monthly-amount').value, 10);
   const ctx = document.getElementById('chart').getContext('2d');
-  const data = generateMockData(start, end);
+  const data = generateMockData(start, end, monthly);
   if (chartInstance) {
     chartInstance.destroy();
   }
@@ -80,7 +81,8 @@ export function init() {
     csvBtn.addEventListener('click', () => {
       const start = document.getElementById('start-date').value;
       const end = document.getElementById('end-date').value;
-      downloadCSV(start, end);
+      const monthly = parseInt(document.getElementById('monthly-amount').value, 10);
+      downloadCSV(start, end, monthly);
     });
   }
   updateChart();
