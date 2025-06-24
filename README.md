@@ -79,10 +79,11 @@
     * @param {Object} params
     * @returns {{ tradeDate: string, action: 'buy'|'sell', amount: number }}[]
     */
-   export function simulateTrades(history, cashBalance, params) {
-     // ここに投資アルゴリズムを書きます
-   }
-   ```
+  export function simulateTrades(history, cashBalance, params) {
+    // ここに投資アルゴリズムを書きます
+  }
+  ```
+   デフォルトでは何もしないダミー実装が入っています。独自のロジックに書き換えてください。
 3. **パラメータ設定**：UIのフォームから開始日、終了日に加え、月次追加額（デフォルト10万円）も指定できます。
 4. **シミュレーション実行**：`シミュレーション開始` ボタンを押すと、バックテストが実行され、チャートと表が更新されます。
 
