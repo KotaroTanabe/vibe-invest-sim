@@ -1,12 +1,12 @@
 {
   "name": "vibe-invest-sim",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "type": "module",
   "scripts": {
     "start": "http-server -p 3000 -c-1 .",
     "lint": "echo \"No lint configured\"",
     "build": "rm -rf dist && mkdir dist && cp -r public dist && cp -r src dist && cp public/index.html dist/index.html && cp public/style.css dist/style.css && sed -i 's|../src/main.js|src/main.js|' dist/index.html",
-    "test": "node test/test.js && node test/paifuExporter.test.js && node test/build.test.js"
+    "test": "node test/test.js && node test/paifuExporter.test.js && node test/exportCSV.test.js && node test/build.test.js"
   },
   "devDependencies": {
     "http-server": "^14.1.1"

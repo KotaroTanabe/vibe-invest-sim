@@ -40,6 +40,26 @@ export function renderChart(ctx, data) {
   });
 }
 
+export function generateCSV(data) {
+  let csv = 'Month,Investment,Valuation\n';
+  data.labels.forEach((label, idx) => {
+    csv += `${label},${data.investmentData[idx]},${data.valuationData[idx]}\n`;
+  });
+  return csv;
+}
+
+export function downloadCSV(start, end) {
+  const data = generateMockData(start, end);
+  const csv = generateCSV(data);
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'simulation.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 let chartInstance;
 
 export function updateChart() {
@@ -55,6 +75,14 @@ export function updateChart() {
 
 export function init() {
   document.getElementById('simulate-btn').addEventListener('click', updateChart);
+  const csvBtn = document.getElementById('csv-btn');
+  if (csvBtn) {
+    csvBtn.addEventListener('click', () => {
+      const start = document.getElementById('start-date').value;
+      const end = document.getElementById('end-date').value;
+      downloadCSV(start, end);
+    });
+  }
   updateChart();
 }
 
