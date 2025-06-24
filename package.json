@@ -6,7 +6,7 @@
     "start": "http-server -p 3000 -c-1 .",
     "lint": "eslint .",
     "build": "rm -rf dist && mkdir dist && cp -r src dist && cp public/index.html dist/index.html && cp public/style.css dist/style.css && sed -i 's|../src/main.js|src/main.js|' dist/index.html",
-    "test": "node test/algorithm.test.js && node test/test.js && node test/paifuExporter.test.js && node test/exportCSV.test.js && node test/build.test.js"
+    "test": "node test/algorithm.test.js && node test/test.js && node test/paifuExporter.test.js && node test/exportCSV.test.js && node test/downloadCSV.test.js && node test/build.test.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
