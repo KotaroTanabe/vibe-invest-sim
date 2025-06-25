@@ -1,6 +1,12 @@
 export function generateMockData(start = '2024-01', end = '2024-12', monthly = 100000) {
   const startDate = new Date(`${start}-01`);
   const endDate = new Date(`${end}-01`);
+  if (endDate < startDate) {
+    throw new Error('end must be equal or after start');
+  }
+  if (monthly <= 0) {
+    throw new Error('monthly must be positive');
+  }
   const labels = [];
   const investmentData = [];
   const valuationData = [];
