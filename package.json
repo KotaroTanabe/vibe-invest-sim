@@ -5,7 +5,7 @@
   "scripts": {
     "start": "http-server -p 3000 -c-1 .",
     "lint": "eslint .",
-    "build": "rm -rf dist && mkdir dist && cp -r src dist && cp public/index.html dist/index.html && cp public/style.css dist/style.css && node scripts/updateIndex.js dist/index.html",
+    "build": "node scripts/build.js",
     "test": "node test/algorithm.test.js && node test/test.js && node test/paifuExporter.test.js && node test/exportCSV.test.js && node test/downloadCSV.test.js && node test/build.test.js"
   },
   "devDependencies": {
