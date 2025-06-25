@@ -6,6 +6,7 @@
     "start": "http-server -p 3000 -c-1 .",
     "lint": "eslint .",
     "build": "node scripts/build.js",
+    "pretest": "npm run build",
     "test": "node test/algorithm.test.js && node test/test.js && node test/paifuExporter.test.js && node test/exportCSV.test.js && node test/downloadCSV.test.js && node test/build.test.js"
   },
   "devDependencies": {
