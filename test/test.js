@@ -13,4 +13,7 @@ assert.strictEqual(data.labels[2], '2024-03');
 
 data = generateMockData('2024-01', '2024-01', 50000);
 assert.strictEqual(data.investmentData[0], 50000, 'monthly amount should be applied');
+
+assert.throws(() => generateMockData('2024-03', '2024-01'), /end must be equal or after start/);
+assert.throws(() => generateMockData('2024-01', '2024-02', 0), /monthly must be positive/);
 console.log('All tests passed');
