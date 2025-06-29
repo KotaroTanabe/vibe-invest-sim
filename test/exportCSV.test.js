@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { generateMockData, generateCSV } from '../src/main.js';
+import { generateMockData, generateCSV } from '../src/core.js';
 
 const data = generateMockData('2024-01', '2024-03', 200000);
 const csv = generateCSV(data);
