@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { generateMockData } from '../src/main.js';
+import { generateMockData } from '../src/core.js';
 
 let data = generateMockData();
 assert.strictEqual(data.labels.length, 12, 'default should have 12 months');
